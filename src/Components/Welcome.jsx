@@ -8,7 +8,7 @@ class Welcome extends Component {
                 <Jumbotron fluid>
                     <Container fluid>
                         <h1 className="display-3"> LaFeltrinelli</h1>
-                        <p className="lead">Welcome</p>
+                        <p className="lead">Welcome to your book store</p>
                     </Container>
             </Jumbotron>
             </div>

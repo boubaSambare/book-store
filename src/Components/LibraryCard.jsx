@@ -11,22 +11,26 @@ import {
 
 class LibraryCard extends Component {
   render() {
+      const {title, category, description, price, image,key} = this.props
     return (
       <div>
         <Card>
           <CardImg
             top
             width="100%"
-            src="/assets/318x180.svg"
+            src={image}
             alt="Card image cap"
           />
           <CardBody>
-            <CardTitle>{this.props.title.substring(0,20)}</CardTitle>
-            <CardSubtitle>{this.props.category}</CardSubtitle>
+            <CardTitle>{title.substring(0,20)}</CardTitle>
+            <CardSubtitle>{category}</CardSubtitle>
             <CardText>
-              {this.props.}
+              {description}
             </CardText>
-            <Button>Button</Button>
+            <CardText>
+                <strong>PRICE: {price}</strong>
+            </CardText>
+            <Button>ADD</Button>
           </CardBody>
         </Card>
       </div>

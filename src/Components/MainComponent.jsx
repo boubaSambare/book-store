@@ -3,6 +3,7 @@ import {Container, Row, Col}  from 'reactstrap'
 import MyNav from './MyNav';
 import MyFooter from './MyFooter'
 import Welcome from './Welcome';
+import LastRelease from './LastRelease';
 
 
 class MainComponent extends Component {
@@ -16,6 +17,7 @@ class MainComponent extends Component {
                          <Welcome></Welcome>
                         </Col>
                     </Row>
+                    <LastRelease></LastRelease>
                 </Container>
                 <MyFooter author="Sambare Aboubacar"></MyFooter>
             </div>
