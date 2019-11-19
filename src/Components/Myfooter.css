@@ -1,0 +1,9 @@
+footer {
+    position: fixed;
+    top: 80%;
+    left: 0;
+    right: 0;
+    height: 20%;
+    overflow: auto;
+    background-color:black;
+}
