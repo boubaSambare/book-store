@@ -11,7 +11,7 @@ import {
 
 class LibraryCard extends Component {
   render() {
-      const {title, category, description, price, image,key} = this.props
+      const {title, category, description, price, image} = this.props
     return (
       <div>
         <Card>
@@ -22,7 +22,7 @@ class LibraryCard extends Component {
             alt="Card image cap"
           />
           <CardBody>
-            <CardTitle>{title.substring(0,20)}</CardTitle>
+            <CardTitle>{title.substring(0,14)}</CardTitle>
             <CardSubtitle>{category}</CardSubtitle>
             <CardText>
               {description}

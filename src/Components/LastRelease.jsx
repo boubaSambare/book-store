@@ -12,7 +12,7 @@ class LastRelease extends Component {
     return (
       <>
         <h3 className="text-center">Fantasy</h3>
-        <Row>
+        <Row className="my-1">
           {Fantasy.map((book, i) => (
             <Col className="col-md-4" key={i}>
               <LibraryCard 
