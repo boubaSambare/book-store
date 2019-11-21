@@ -12,7 +12,7 @@ import MyBadge from "./MyBadge";
 
 class LibraryCard extends Component {
   render() {
-      const {title, category, description, price, image,showBook,book} = this.props
+      const {title, category,  price, image,showBook,book} = this.props
     return (
       <div>
         <Card onClick={() => showBook(book)}>
@@ -26,10 +26,9 @@ class LibraryCard extends Component {
             <CardTitle>{title.substring(0,14)}</CardTitle>
             <CardSubtitle>{category}</CardSubtitle>
             <CardText>
-              {description}
             </CardText>
             <CardText>
-                <strong>PRICE: {price}</strong><MyBadge title="BLACK FRIDAY" text="SALE"></MyBadge>
+                <strong>PRICE: {price+"$"}</strong><MyBadge title="BLACK FRIDAY" text="SALE %%%%"></MyBadge>
             </CardText>
             <Button>BUY NOW</Button>
           </CardBody>
