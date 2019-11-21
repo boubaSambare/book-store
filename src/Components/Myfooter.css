@@ -1,9 +1,10 @@
 footer {
     position: fixed;
-    top: 80%;
+    top: 95%;
     left: 0;
     right: 0;
-    height: 20%;
+    height: 100px;
+    bottom: 0;
     overflow: auto;
     background-color:black;
 }

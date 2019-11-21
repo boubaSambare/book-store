@@ -8,13 +8,14 @@ import {
   CardSubtitle,
   Button
 } from "reactstrap";
+import MyBadge from "./MyBadge";
 
 class LibraryCard extends Component {
   render() {
-      const {title, category, description, price, image} = this.props
+      const {title, category, description, price, image,showBook,book} = this.props
     return (
       <div>
-        <Card>
+        <Card onClick={() => showBook(book)}>
           <CardImg
             top
             width="100%"
@@ -28,9 +29,9 @@ class LibraryCard extends Component {
               {description}
             </CardText>
             <CardText>
-                <strong>PRICE: {price}</strong>
+                <strong>PRICE: {price}</strong><MyBadge title="BLACK FRIDAY" text="SALE"></MyBadge>
             </CardText>
-            <Button>ADD</Button>
+            <Button>BUY NOW</Button>
           </CardBody>
         </Card>
       </div>

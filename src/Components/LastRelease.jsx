@@ -7,6 +7,7 @@ import Romance from "../data/romance.json";
 import Scifi from "../data/scifi.json";
 import LibraryCard from './LibraryCard'
 import SearchComponent from "./SearchComponent.jsx";
+import SingleBook from "./SingleBook.jsx";
 
 class LastRelease extends Component {
     state = {
@@ -19,15 +20,24 @@ class LastRelease extends Component {
         searchString: e.target.value.toLowerCase()
       })
     }
+
+    selectBook = (book) => {
+      this.setState({
+        selectedBook: book
+      })
+    }
   render() {
     let books = [...Fantasy,...History,...Horror,...Romance,...Scifi]
     return (
       <>
         <SearchComponent onChange={this.searchChange} placeholder="search for a book" value={this.state.searchString}></SearchComponent>
-        <Row className="my-1">
+    {this.state.selectedBook && <SingleBook singleBook={this.state.selectedBook} back={this.selectBook}></SingleBook> }
+      {!this.state.selectedBook &&  <Row className="my-1">
           {books.map((book, i) => (
             <Col className="col-md-4" key={i}>
               <LibraryCard 
+                    showBook={this.selectBook}
+                    book={book}
                     category={book.category}
                     image={book.img}
                     description={book.title}
@@ -36,6 +46,7 @@ class LastRelease extends Component {
             </Col>
           ))}
         </Row>
+          }
       </>
     );
   }
