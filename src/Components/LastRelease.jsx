@@ -6,66 +6,26 @@ import Horror from "../data/horror.json";
 import Romance from "../data/romance.json";
 import Scifi from "../data/scifi.json";
 import LibraryCard from './LibraryCard'
+import SearchComponent from "./SearchComponent.jsx";
 
 class LastRelease extends Component {
+    state = {
+      selectedBook:undefined,
+      searchString:''
+    }
+
+    searchChange = (e) => {
+      this.setState({
+        searchString: e.target.value.toLowerCase()
+      })
+    }
   render() {
+    let books = [...Fantasy,...History,...Horror,...Romance,...Scifi]
     return (
       <>
-        <h3 className="text-center">Fantasy</h3>
+        <SearchComponent onChange={this.searchChange} placeholder="search for a book" value={this.state.searchString}></SearchComponent>
         <Row className="my-1">
-          {Fantasy.map((book, i) => (
-            <Col className="col-md-4" key={i}>
-              <LibraryCard 
-                    category={book.category}
-                    image={book.img}
-                    description={book.title}
-                    price={book.price}
-                    title={book.title}/>
-            </Col>
-          ))}
-        </Row>
-        <h3 className="text-center">History</h3>
-        <Row>
-          {History.map((book, i) => (
-            <Col className="col-md-4" key={i}>
-              <LibraryCard 
-                    category={book.category}
-                    image={book.img}
-                    description={book.title}
-                    price={book.price}
-                    title={book.title}/>
-            </Col>
-          ))}
-        </Row>
-        <h3 className="text-center">Horror</h3>
-        <Row>
-          {Horror.map((book, i) => (
-            <Col className="col-md-4" key={i}>
-              <LibraryCard 
-                    category={book.category}
-                    image={book.img}
-                    description={book.title}
-                    price={book.price}
-                    title={book.title}/>
-            </Col>
-          ))}
-        </Row>
-        <h3 className="text-center">Romance</h3>
-        <Row>
-          {Romance.map((book, i) => (
-            <Col className="col-md-4" key={i}>
-              <LibraryCard 
-                    category={book.category}
-                    image={book.img}
-                    description={book.title}
-                    price={book.price}
-                    title={book.title}/>
-            </Col>
-          ))}
-        </Row>
-        <h3 className="text-center">Scifi</h3>
-        <Row>
-          {Scifi.map((book, i) => (
+          {books.map((book, i) => (
             <Col className="col-md-4" key={i}>
               <LibraryCard 
                     category={book.category}
