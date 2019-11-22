@@ -10,6 +10,6 @@ class SearchComponent extends Component {
             </div>
         );
     }
-}
+} 
 
 export default SearchComponent;
