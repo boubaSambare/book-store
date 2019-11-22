@@ -28,7 +28,7 @@ class LibraryCard extends Component {
             <CardText>
             </CardText>
             <CardText>
-                <strong>PRICE: {price+"$"}</strong><MyBadge title="BLACK FRIDAY" text="SALE %%%%"></MyBadge>
+                <strong>PRICE: {price+"$"}</strong><MyBadge title="BLACK FRIDAY" text="SALE 10%"></MyBadge>
             </CardText>
             <Button>BUY NOW</Button>
           </CardBody>

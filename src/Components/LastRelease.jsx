@@ -30,7 +30,7 @@ class LastRelease extends Component {
     let books = [...Fantasy,...History,...Horror,...Romance,...Scifi]
     return (
       <>
-        <SearchComponent onChange={this.searchChange} placeholder="search for a book" value={this.state.searchString}></SearchComponent>
+        <SearchComponent onChange={this.searchChange} placeholder="search for a book" value={this.state.searchString} ></SearchComponent>
     {this.state.selectedBook && <SingleBook singleBook={this.state.selectedBook} back={this.selectBook}></SingleBook> }
       {!this.state.selectedBook &&  <Row className="my-1">
           {books
