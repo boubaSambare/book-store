@@ -35,7 +35,7 @@ class LastRelease extends Component {
     return (
       <>
         <SearchComponent onChange={this.searchChange} placeholder="search for a book" value={this.state.searchString} ></SearchComponent>
-    {this.state.selectedBook && <SingleBook singleBook={this.state.selectedBook} back={this.selectBook}></SingleBook> }
+    {books && this.state.selectedBook && <SingleBook singleBook={this.state.selectedBook} back={this.selectBook}></SingleBook> }
       {!this.state.selectedBook &&  <Row className="my-1">
           {books
                 .filter(element => element.title.toLowerCase().includes(this.state.searchString))
