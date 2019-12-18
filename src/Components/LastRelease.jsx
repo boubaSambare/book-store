@@ -6,7 +6,7 @@ import SingleBook from "./SingleBook.jsx";
 
 class LastRelease extends Component {
     state = {
-      books:[],
+      books:undefined,
       selectedBook:undefined,
       searchString:''
     }
