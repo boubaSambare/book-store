@@ -12,10 +12,10 @@ import MyBadge from "./MyBadge";
 
 class LibraryCard extends Component {
   render() {
-      const {title, category,  price, image,showBook,book} = this.props
+      const {title, category,  price, image,book} = this.props
     return (
       <div>
-        <Card onClick={() => showBook(book)}>
+       {book && <Card >
           <CardImg
             top
             width="100%"
@@ -23,16 +23,16 @@ class LibraryCard extends Component {
             alt="Card image cap"
           />
           <CardBody>
-            <CardTitle>{title.substring(0,14)}</CardTitle>
+            <CardTitle>{title}</CardTitle>
             <CardSubtitle>{category}</CardSubtitle>
             <CardText>
             </CardText>
-            <CardText>
+            <div>
                 <strong>PRICE: {price+"$"}</strong><MyBadge title="BLACK FRIDAY" text="SALE 10%"></MyBadge>
-            </CardText>
+            </div>
             <Button>BUY NOW</Button>
           </CardBody>
-        </Card>
+        </Card>}
       </div>
     );
   }
