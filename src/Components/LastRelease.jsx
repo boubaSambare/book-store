@@ -11,6 +11,7 @@ import SingleBook from "./SingleBook.jsx";
 
 class LastRelease extends Component {
     state = {
+      books:[],
       selectedBook:undefined,
       searchString:''
     }
@@ -26,8 +27,16 @@ class LastRelease extends Component {
         selectedBook: book
       })
     }
+    componentDidMount = async () => {
+      let request = await fetch("https://backend-bubba-book-store.herokuapp.com/books")
+      let reponse = await request.json()
+      this.setState({
+        books: reponse
+      })
+    }
+
   render() {
-    let books = [...Fantasy,...History,...Horror,...Romance,...Scifi]
+    let {books}  = this.state
     return (
       <>
         <SearchComponent onChange={this.searchChange} placeholder="search for a book" value={this.state.searchString} ></SearchComponent>
